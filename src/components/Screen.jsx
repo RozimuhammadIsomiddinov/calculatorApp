@@ -1,14 +1,26 @@
 import { useContext } from "react";
 import { SolveContext } from "../context/SolveContext";
-import { Textfit } from "react-textfit";
 
 const Screen = () => {
   const { solve } = useContext(SolveContext);
 
   return (
-    <Textfit className="screen" max={70} mode="single">
+    <div
+      className="screen"
+      max={70}
+      mode="single"
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
+        height: "100%",
+        objectFit: "fill",
+        fontSize: "1.7rem",
+      }}
+    >
       {solve.digit ? solve.digit : solve.res}
-    </Textfit>
+    </div>
   );
 };
 
